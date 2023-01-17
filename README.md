@@ -1,6 +1,4 @@
 # nfc-document-extractor
-NFC-based verification leverages two things everybody has – IDs and smartphones. By tapping an NFC-enabled device against the ID, the RFID data within the NFC chip is extracted and verified. Using this in schools will help the school log library records, canteen records, even giving different access to students in different classes possible.
-
 Everyday we try to makes lives easier for us. NFC does just that. It is very useful to
 reduce time in various things in our day to day life. NFC-based verification leverages two
 things everybody has – IDs and smartphones. By tapping an NFC-enabled device against

@@ -5,16 +5,12 @@ import { useNavigate } from "react-router";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import NavSearch from "./NavSearchAttendance";
-import Scan from "../containers/Scan";
-import Write from "../containers/Write";
-import { ActionsContext } from "../contexts/context";
+import Nfc from './Nfc'
+
 
 function MarkAttend() {
   const [state, setState] = useState([]);
-  const [actions, setActions] = useState(null);
-  const { scan, write } = actions || {};
 
-  const actionsValue = { actions, setActions };
 
   useEffect(() => {
     getData();
@@ -24,10 +20,6 @@ function MarkAttend() {
 
   const toCompose = () => {
     navigate("/composeattend");
-  };
-  const onHandleAction = (actions) => {
-    setActions({ ...actions });
-    setTimeout(toCompose, 3000);
   };
 
   const getData = async () => {
@@ -61,17 +53,15 @@ function MarkAttend() {
           <Card.Text>
             <button
               id="blogbit-button"
-              onClick={() => onHandleAction({ scan: 'scanning', write: null })}
+              onClick={() => toCompose()}
             >
               Mark present
             </button>
+            <Nfc/>
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
-      <ActionsContext.Provider value={actionsValue}>
-        {scan && <Scan />}
-        {write && <Write />}
-      </ActionsContext.Provider>
+ 
 
       <Row xs={1} md={2} className="g-4">
         {state.map((element) => (
@@ -81,7 +71,7 @@ function MarkAttend() {
               key={element._id}
             >
               <img
-                src="/images/card-img.jpg"
+                src="/images/Snipabit.jpg"
                 className="card-img-top"
                 alt="..."
               />

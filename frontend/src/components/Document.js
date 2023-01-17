@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import NavSearch from "./NavSearchDocument";
+import Nfc from './Nfc'
 
 
 function Docs() {
@@ -49,8 +50,6 @@ function Docs() {
     });
   };
 
-
-  
   return (
     <div>
       <Card className="bg-light blog-card">
@@ -65,12 +64,12 @@ function Docs() {
               id="blogbit-button"
               onClick={() => toCompose()}
             >
-              Scan Document
+              Compose Document
             </button>
           </Card.Text>
+          <Nfc/>
         </Card.ImgOverlay>
       </Card>
-     
       {console.log(state)}
       <Row xs={1} md={2} className="g-1">
         {state.map((element) => (
